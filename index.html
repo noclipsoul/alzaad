@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepôt Vente en Gros - Tunisie</title>
+    <meta name="description"
+        content="Vente en gros de produits alimentaires en Tunisie. Soda, biscuits, chocolat, jus. Vente en cartons uniquement. Livraison rapide.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons (Phosphor Icons - Lightweight and clean) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0F172A',   /* Slate 900 - Deep Warehouse Blue */
+                            gold: '#D97706',   /* Amber 600 - Industrial Gold */
+                            goldLight: '#F59E0B',
+                            light: '#F8FAFC',  /* Slate 50 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .partnersSwiper {
+            width: 100%;
+        }
+
+        .partnersSwiper .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <style>
+        /* Custom Utilities */
+        .rtl-flip {
+            transform: scaleX(1);
+        }
+
+        [dir="rtl"] .rtl-flip {
+            transform: scaleX(-1);
+        }
+
+        body {
+            font-feature-settings: "cv11", "ss01";
+        }
+    </style>
+
+
+</head>
+
+<body class="bg-gray-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+    <!-- Swiper JS (ONLY ONCE) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Partners Swiper
+            new Swiper(".partnersSwiper", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                speed: 800,
+                breakpoints: {
+                    0: { slidesPerView: 2 },
+                    640: { slidesPerView: 3 },
+                    1024: { slidesPerView: 4 },
+                },
+            });
+
+            // Brands Swiper
+            new Swiper(".brandsSwiper", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                speed: 800,
+                breakpoints: {
+                    0: { slidesPerView: 2 },
+                    640: { slidesPerView: 3 },
+                    1024: { slidesPerView: 4 },
+                },
+            });
+
+        });
+    </script>
+
+    <!-- Navbar -->
+    <nav class="bg-brand-blue text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo Area -->
+            <div class="flex items-center gap-3">
+                <img src="./images/profile page logo.png" alt="Alzaad Logo"
+                    class="h-12 w-auto object-contain bg-white rounded-md p-0.5">
+                <span data-i18n="brandName" class="font-bold text-lg hidden sm:block">Wholesale Food TN</span>
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="relative group">
+                <button id="langBtn"
+                    class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded transition border border-slate-600">
+                    <i class="ph ph-globe text-brand-gold"></i>
+                    <span id="currentLangLabel">Français</span>
+                    <i class="ph ph-caret-down"></i>
+                </button>
+                <!-- Dropdown -->
+                <div
+                    class="absolute right-0 mt-2 w-32 bg-white text-slate-900 rounded shadow-xl hidden group-hover:block border border-gray-100 z-50 transition-all duration-200">
+                    <button onclick="setLanguage('fr')"
+                        class="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm font-medium">Français</button>
+                    <button onclick="setLanguage('en')"
+                        class="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm font-medium">English</button>
+                    <button onclick="setLanguage('ar')"
+                        class="block w-full text-right px-4 py-2 hover:bg-gray-100 text-sm font-arabic font-bold">العربية</button>
+                </div>
+            </div>
+        </div>
+        <!-- Secondary Navigation -->
+        <div class="bg-white border-b border-gray-200 shadow-sm sticky top-[64px] z-40">
+            <div class="container mx-auto px-4">
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center justify-center gap-8 py-3 font-medium text-slate-700">
+                    <a href="#home" class="hover:text-brand-blue transition">Accueil</a>
+                    <a href="#products" class="hover:text-brand-blue transition">Produits</a>
+                    <a href="#about" class="hover:text-brand-blue transition">À propos</a>
+                    <a href="#services" class="hover:text-brand-blue transition">Services</a>
+                    <a href="#contact" class="hover:text-brand-blue transition">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex justify-between items-center py-3">
+                    <span class="font-semibold text-slate-700">Menu</span>
+                    <button onclick="toggleMenu()" class="text-brand-blue text-2xl">
+                        ☰
+                    </button>
+                </div>
+
+                <!-- Mobile Dropdown -->
+                <div id="mobileMenu" class="hidden md:hidden flex flex-col gap-3 pb-4 text-slate-700 font-medium">
+                    <a href="#home" class="hover:text-brand-blue transition">Accueil</a>
+                    <a href="#products" class="hover:text-brand-blue transition">Produits</a>
+                    <a href="#about" class="hover:text-brand-blue transition">À propos</a>
+                    <a href="#services" class="hover:text-brand-blue transition">Services</a>
+                    <a href="#contact" class="hover:text-brand-blue transition">Contact</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Toggle Script -->
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById("mobileMenu");
+                menu.classList.toggle("hidden");
+            }
+        </script>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="./images/hero.png" alt="Entrepôt" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b bg-black/10"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center max-w-3xl mx-auto">
+
+            <h1 data-i18n="heroTitle" class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                ALZAAD VENTE EN GROS PRODUITS ALIMENTAIRES
+            </h1>
+            <p data-i18n="heroSub" class="text-xl md:text-2xl text-gray-300 mb-8 font-light">
+                Approvisionnez votre commerce avec les meilleurs prix. Vente en cartons et colis uniquement.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/21696838532" target="_blank"
+                    class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition transform hover:scale-105 shadow-lg">
+                    <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+                    <span data-i18n="ctaMain">Commander sur WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-6">
+                À propos de nous
+            </h2>
+
+            <p class="text-gray-600 justify-center text-lg leading-relaxed">
+                <span class="font-semibold  text-brand-blue">AL ZAAD (الزاد)</span>
+                est votre partenaire de confiance pour l'approvisionnement alimentaire en gros,
+                au service des commerçants et des revendeurs en Tunisie.
+                Profitez de produits de qualité et de tarifs compétitifs
+                pour assurer la prospérité de votre entreprise sur le marché.
+            </p>
+
+        </div>
+    </section>
+    <!-- Partners Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-12">
+                Nos Partenaires
+            </h2>
+
+            <div class="swiper partnersSwiper  w-full">
+                <div class="swiper-wrapper items-center">
+
+                    <!-- Partner Logo -->
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/kif.png" class="h-20 object-contain  transition duration-300">
+                    </div>
+
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/coca.png" class="h-20 object-contain transition duration-300">
+                    </div>
+
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/said.png" class="h-20 object-contain transition duration-300">
+                    </div>
+
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/saida.png" class="h-20 object-contain  transition duration-300">
+                    </div>
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/saida.png" class="h-20 object-contain  transition duration-300">
+                    </div>
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/saida.png" class="h-20 object-contain  transition duration-300">
+                    </div>
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/saida.png" class="h-20 object-contain  transition duration-300">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Brands Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-12">
+                Nos Marques
+            </h2>
+
+            <div class="swiper brandsSwiper">
+                <div class="swiper-wrapper items-center">
+
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/brand1.png"
+                            class="h-20 object-contain grayscale hover:grayscale-0 transition duration-300">
+                    </div>
+
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/brand2.png"
+                            class="h-20 object-contain grayscale hover:grayscale-0 transition duration-300">
+                    </div>
+
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/brand3.png"
+                            class="h-20 object-contain grayscale hover:grayscale-0 transition duration-300">
+                    </div>
+
+                    <div class="swiper-slide flex justify-center">
+                        <img src="./images/brand4.png"
+                            class="h-20 object-contain grayscale hover:grayscale-0 transition duration-300">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- What We Sell -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 data-i18n="productsTitle" class="text-3xl font-bold text-brand-blue mb-2">Nos Produits</h2>
+                <p data-i18n="productsSub" class="text-gray-500">Produits d'usine en gros volume</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <!-- Category Items -->
+                <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-100 hover:shadow-md transition">
+                    <i class="ph-fill ph-brandy text-4xl text-brand-gold mb-3"></i>
+                    <h3 data-i18n="catSoda" class="font-bold text-slate-800">Boissons Gazeuses</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-100 hover:shadow-md transition">
+                    <i class="ph-fill ph-cookie text-4xl text-brand-gold mb-3"></i>
+                    <h3 data-i18n="catBiscuit" class="font-bold text-slate-800">Biscuits</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-100 hover:shadow-md transition">
+                    <i class="ph-fill ph-cookie text-4xl text-brand-gold mb-3"></i>
+                    <h3 data-i18n="catChoco" class="font-bold text-slate-800">Chocolat</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-100 hover:shadow-md transition">
+                    <i class="ph-fill ph-pint-glass text-4xl text-brand-gold mb-3"></i>
+                    <h3 data-i18n="catJuice" class="font-bold text-slate-800">Jus</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-100 hover:shadow-md transition">
+                    <i class="ph-fill ph-calendar-blank text-4xl text-brand-gold mb-3"></i>
+                    <!-- Using calendar blank as generic wrapper or candy placeholder if specific candy icon missing -->
+                    <h3 data-i18n="catSweets" class="font-bold text-slate-800">Confiseries</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-100 hover:shadow-md transition">
+                    <i class="ph-fill ph-cake text-4xl text-brand-gold mb-3"></i>
+                    <h3 data-i18n="catCakes" class="font-bold text-slate-800">Gâteaux</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl text-center border border-gray-100 hover:shadow-md transition">
+                    <i class="ph-fill ph-package text-4xl text-brand-gold mb-3"></i>
+                    <h3 data-i18n="catFactory" class="font-bold text-slate-800">Produits Industriels</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="bg-brand-blue text-white py-16">
+        <div class="container mx-auto px-4">
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+
+                <!-- Stat 1 -->
+                <div>
+                    <h3 class="text-4xl md:text-5xl font-bold text-brand-gold">
+                        <span class="counter" data-target="1500">100</span>+
+                    </h3>
+                    <p class="mt-2 text-sm md:text-base uppercase tracking-wide">
+                        Clients Satisfaits
+                    </p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div>
+                    <h3 class="text-4xl md:text-5xl font-bold text-brand-gold">
+                        <span class="counter" data-target="1000">3500</span>+
+                    </h3>
+                    <p class="mt-2 text-sm md:text-base uppercase tracking-wide">
+                        Produits Disponibles
+                    </p>
+                </div>
+
+
+
+                <!-- Stat 3 -->
+                <div>
+                    <h3 class="text-4xl md:text-5xl font-bold text-brand-gold">
+                        <span class="counter" data-target="24">300</span>+
+                    </h3>
+                    <p class="mt-2 text-sm md:text-base uppercase tracking-wide">
+                        Support & Livraison
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-slate-50 border-y border-gray-200">
+        <div class="container mx-auto px-4 text-center">
+            <h2 data-i18n="whyTitle" class="text-3xl font-bold text-brand-blue mb-12">Pourquoi Nous Choisir ?</h2>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-16 h-16 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="ph-fill ph-buildings"></i>
+                    </div>
+                    <h3 data-i18n="featBulkTitle" class="text-xl font-bold mb-3">Gros </h3>
+                    <p data-i18n="featBulkDesc" class="text-gray-600">Nous ne servons que les commerçants et les
+                        acheteurs en volume. Pas de détail.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-16 h-16 bg-amber-100 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="ph ph-package"></i>
+                    </div>
+                    <h3 data-i18n="featStockTitle" class="text-xl font-bold mb-3">Stock Stable</h3>
+                    <p data-i18n="featStockDesc" class="text-gray-600">Disponibilité garantie sur nos produits phares
+                        toute l'année.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="ph-fill ph-money"></i>
+                    </div>
+                    <h3 data-i18n="featPriceTitle" class="text-xl font-bold mb-3">Prix Transparents</h3>
+                    <p data-i18n="featPriceDesc" class="text-gray-600">Meilleurs tarifs du marché pour maximiser votre
+                        marge.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="ph-fill ph-money"></i>
+                    </div>
+                    <h3 data-i18n="featPriceTitle" class="text-xl font-bold mb-3">Prix Transparents</h3>
+                    <p data-i18n="featPriceDesc" class="text-gray-600">Meilleurs tarifs du marché pour maximiser votre
+                        marge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Process -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 data-i18n="howTitle" class="text-3xl font-bold text-brand-blue text-center mb-12">Comment Commander</h2>
+
+            <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-8">
+                <!-- Step 1 -->
+                <div class="w-full md:w-1/3 text-center">
+                    <div
+                        class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg">
+                        1</div>
+                    <h3 data-i18n="step1Title" class="text-xl font-bold mb-2">Contactez-nous</h3>
+                    <p data-i18n="step1Desc" class="text-gray-500">Envoyez votre liste de commande sur WhatsApp.</p>
+                </div>
+
+                <!-- Arrow (Hidden on mobile) -->
+                <div class="hidden md:block pt-8 text-gray-300 rtl-flip">
+                    <i class="ph-bold ph-arrow-right text-4xl"></i>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="w-full md:w-1/3 text-center">
+                    <div
+                        class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg">
+                        2</div>
+                    <h3 data-i18n="step2Title" class="text-xl font-bold mb-2">Confirmation</h3>
+                    <p data-i18n="step2Desc" class="text-gray-500">Nous validons la disponibilité et le prix total.</p>
+                </div>
+
+                <!-- Arrow -->
+                <div class="hidden md:block pt-8 text-gray-300 rtl-flip">
+                    <i class="ph-bold ph-arrow-right text-4xl"></i>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="w-full md:w-1/3 text-center">
+                    <div
+                        class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg">
+                        3</div>
+                    <h3 data-i18n="step3Title" class="text-xl font-bold mb-2">Livraison</h3>
+                    <p data-i18n="step3Desc" class="text-gray-500">Livraison ou Retrait locale gratuitement .</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="w-full md:w-1/3 text-center">
+                    <div
+                        class="w-20 h-20 bg-brand-blue text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg">
+                        4</div>
+                    <h3 data-i18n="step4Title" class="text-xl font-bold mb-2">SAV</h3>
+                    <p data-i18n="step4Desc" class="text-gray-500">Des conseillers de vente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 py-12 bg-slate-900  text-white">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <h2 class="text-3xl font-bold text-center mb-8">
+                Our Location
+            </h2>
+
+            <div class="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d284.42984209170703!2d10.20666541744435!3d36.7216958649469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd372196c28b31%3A0xd34a59bc86dd0a7c!2sAl%20zaad!5e1!3m2!1sfr!2stn!4v1770792929498!5m2!1sfr!2stn"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="relative pt-16 pb-8 border-t border-slate-800 text-center bg-cover bg-center"
+        style="background-image: url('./images/footbg.png');">
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <div class="relative container mx-auto px-4">
+            <h2 data-i18n="footerCta" class="text-2xl md:text-3xl font-bold text-white  mb-8">
+                Prêt à passer commande ?
+            </h2>
+
+            <a href="https://wa.me/96838532"
+                class="inline-flex items-center gap-3 bg-brand-gold hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-full text-xl transition shadow-xl mb-12">
+                <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+                <span data-i18n="ctaMain">Commander maintenant</span>
+            </a>
+
+            <div class="grid md:grid-cols-3 gap-8 text-gray-300 text-sm border-t border-slate-700 pt-8">
+                <div>
+                    <h4 data-i18n="contactTitle" class="text-white font-bold mb-2">Contact</h4>
+                    <p>email: alzaadgros1@gmail.com</p>
+                    <p>+216 96 838 532</p>
+                    <p>+216 96 599 053</p>
+                </div>
+                <div>
+                    <h4 data-i18n="locationTitle" class="text-white font-bold mb-2">Zone de Service</h4>
+                    <p data-i18n="locationDesc">Grand Tunis et environs</p>
+                </div>
+                <div>
+                    <p>&copy; 2026 AlZaad</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Logic -->
+    <script>
+        // Translations
+        const translations = {
+            fr: {
+                brandName: "Grossiste AlZaad",
+                heroTitle: "ALZAAD VENTE EN GROS PRODUITS ALIMENTAIRES",
+                heroSub: "Vente en cartons et colis uniquement. Soda, Biscuits, Jus et plus.",
+                ctaMain: "Commander via WhatsApp",
+                productsTitle: "Ce que nous vendons",
+                productsSub: "Produits d'usine en cartons / colis uniquement",
+                catSoda: "Boissons Gazeuses",
+                catBiscuit: "Biscuits",
+                catChoco: "Chocolat",
+                catJuice: "Jus",
+                catSweets: "Confiseries",
+                catCakes: "Gâteaux",
+                catFactory: "Produits Industriels",
+                whyTitle: "Pourquoi nous choisir ?",
+                featBulkTitle: "Gros ",
+                featBulkDesc: "Nous servons les magasins et acheteurs en volume.",
+                featStockTitle: "Stock Stable",
+                featStockDesc: "Produits disponibles toute l'année.",
+                featPriceTitle: "Prix Clairs",
+                featPriceDesc: "Tarifs compétitifs pour votre marge.",
+                howTitle: "Comment Commander",
+                step1Title: "Contactez via WhatsApp",
+                step1Desc: "Envoyez votre liste de produits.",
+                step2Title: "Confirmation",
+                step2Desc: "Nous validons quantité et disponibilité.",
+                step3Title: "Livraison ou Retrait",
+                step3Desc: "Livraison ou Retrait locale gratuitement.",
+                deliveryTitle: "Livraison Locale Rapide",
+                deliveryDesc: "Nous livrons aux commerces de proximité avec nos propres véhicules. Rapide, fiable et sécurisé.",
+                trustTitle: "Confiance",
+                trustDesc: "\"Partenaire fiable pour l'approvisionnement en gros. Service sérieux.\"",
+
+                footerCta: "Besoin de marchandise ?",
+                contactTitle: "Contact",
+                locationTitle: "Adresse",
+                locationDesc: "032 STRASBOUG MOUROUJ 3, Ben Arous, Tunisie, 2074",
+            },
+            en: {
+                brandName: "AlZaad Wholesale",
+                heroTitle: "Wholesale Food Warehouse – Tunisia",
+                heroSub: "Sales in cartons and packages only. Soda, Biscuits, Juice & more.",
+                ctaMain: "Order via WhatsApp",
+                productsTitle: "What We Sell",
+                productsSub: "Factory products in cartons / bulk only",
+                catSoda: "Soft Drinks",
+                catBiscuit: "Biscuits",
+                catChoco: "Chocolate",
+                catJuice: "Juice",
+                catSweets: "Sweets & Gum",
+                catCakes: "Cakes",
+                catFactory: "Industrial Grocery",
+                whyTitle: "Why Choose Us?",
+                featBulkTitle: "Wholesale Only",
+                featBulkDesc: "We only serve shops and bulk buyers.",
+                featStockTitle: "Stable Stock",
+                featStockDesc: "Year-round availability.",
+                featPriceTitle: "Clear Prices",
+                featPriceDesc: "Competitive rates for your margin.",
+                howTitle: "How It Works",
+                step1Title: "Contact via WhatsApp",
+                step1Desc: "Send your product list.",
+                step2Title: "Confirmation",
+                step2Desc: "We confirm quantity and availability.",
+                step3Title: "Delivery or Pickup",
+                step3Desc: "Local delivery by van.",
+                deliveryTitle: "Fast Local Delivery",
+                deliveryDesc: "We deliver to local shops with our own vehicles. Fast, reliable, and secure.",
+                trustTitle: "Trust",
+                trustDesc: "\"Reliable partner for wholesale supply. Serious service.\"",
+                footerCta: "Need Stock?",
+                contactTitle: "Contact",
+                locationTitle: "Adress",
+                locationDesc: "032 STRASBOUG MOUROUJ 3, Ben Arous, Tunisia, 2074",
+            },
+            ar: {
+                brandName: "مخزن الزاد للجملة",
+                heroBadge: "بيع بالجملة فقط",
+                heroTitle: "مستودع بيع المواد الغذائية بالجملة",
+                heroSub: "البيع بالكرتونة والطرود فقط. مشروبات، بسكويت، عصائر والمزيد.",
+                ctaMain: "اطلب عبر واتساب",
+                productsTitle: "منتجاتنا",
+                productsSub: "منتجات مصانع بالكرتونة / طرود فقط",
+                catSoda: "مشروبات غازية",
+                catBiscuit: "بسكويت",
+                catChoco: "شكولاتة",
+                catJuice: "عصائر",
+                catSweets: "حلويات وسكاكر",
+                catCakes: "كيك",
+                catFactory: "مواد غذائية مصنعة",
+                whyTitle: "لماذا نحن؟",
+                featBulkTitle: "بيع بالجملة فقط",
+                featBulkDesc: "نخدم أصحاب المحلات والمشترين بكميات كبيرة.",
+                featStockTitle: "ستوك مستقر",
+                featStockDesc: "توفير المنتجات طوال العام.",
+                featPriceTitle: "أسعار واضحة",
+                featPriceDesc: "أفضل الأسعار لضمان ربحك.",
+                howTitle: "طريقة الطلب",
+                step1Title: "تواصل عبر واتساب",
+                step1Desc: "أرسل قائمة طلباتك.",
+                step2Title: "تأكيد الطلب",
+                step2Desc: "نؤكد الكمية والتوفر.",
+                step3Title: "توصيل أو استلام",
+                step3Desc: "توصيل للمحلات عبر شاحناتنا.",
+                deliveryTitle: "توصيل محلي سريع",
+                deliveryDesc: "نقوم بالتوصيل للمحلات التجارية المجاورة بمركباتنا الخاصة. خدمة سريعة وموثوقة.",
+                trustTitle: "ثقة",
+                trustDesc: "\"شريك موثوق للتزود بالسلع بالجملة. خدمة جادة ومحترفة.\"",
+
+                footerCta: "محتاج سلعة؟",
+                contactTitle: "اتصل بنا",
+                locationTitle: "العنوان",
+                locationDesc: "032 شارع ستراسبورغ مروج 3، بن عروس، تونس، 2074",
+            }
+        };
+
+        function setLanguage(lang) {
+            // Validate lang
+            if (!translations[lang]) lang = 'fr';
+
+            // Update DOM text
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Handle RTL and Font
+            const html = document.documentElement;
+            const body = document.body;
+
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.lang = 'ar';
+                body.classList.remove('font-sans');
+                body.classList.add('font-arabic'); // Switch to Cairo font
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.lang = lang;
+                body.classList.add('font-sans'); // Switch to Inter font
+                body.classList.remove('font-arabic');
+            }
+
+            // Update Button Label
+            const langLabels = {
+                fr: 'Français',
+                en: 'English',
+                ar: 'العربية'
+            };
+            document.getElementById('currentLangLabel').textContent = langLabels[lang];
+        }
+
+        // Init default language
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage('fr');
+        });
+    </script>
+</body>
+
+</html>
