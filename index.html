@@ -16,6 +16,7 @@
         rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -32,7 +33,7 @@
                 extend: {
                     colors: {
                         brand: {
-                            blue: '#0F172A',   /* Slate 900 - Deep Warehouse Blue */
+                            blue: '#4a759e',   /* Slate 900 - Deep Warehouse Blue */
                             gold: '#D97706',   /* Amber 600 - Industrial Gold */
                             goldLight: '#F59E0B',
                             light: '#F8FAFC',  /* Slate 50 */
@@ -150,31 +151,57 @@
                 </div>
             </div>
         </div>
-        <!-- Secondary Navigation -->
-        <div class="bg-white border-b border-gray-200 shadow-sm sticky top-[64px] z-40">
-            <div class="container mx-auto px-4">
+        <!-- Desktop Secondary Bar -->
+        <div class="hidden md:flex items-center py-3 bg-white">
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center justify-center gap-8 py-3 font-medium text-slate-700">
-                    <a href="#home" class="hover:text-brand-blue transition">Accueil</a>
+            <!-- Left Empty Space -->
+            <div class="flex-1"></div>
 
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex justify-between items-center py-3">
-                    <span class="font-semibold text-slate-700">Menu</span>
-                    <button onclick="toggleMenu()" class="text-brand-blue text-2xl">
-                        ☰
-                    </button>
-                </div>
-
-                <!-- Mobile Dropdown -->
-                <div id="mobileMenu" class="hidden md:hidden flex flex-col gap-3 pb-4 text-slate-700 font-medium">
-                    <a href="#home" class="hover:text-brand-blue transition">Accueil</a>
-
-                </div>
-
+            <!-- Center Social Media -->
+            <div class="flex items-center gap-8 text-yellow-400">
+                <a href="https://www.facebook.com/Alzaadgros">
+                    <i class="fa-brands fa-facebook fa-2x hover:scale-110 transition"></i>
+                </a>
+                <a href="https://www.instagram.com/alzaadgros/">
+                    <i class="fa-brands fa-instagram fa-2x hover:scale-110 transition"></i>
+                </a>
+                <a href="https://www.tiktok.com/@alzaadgros">
+                    <i class="fa-brands fa-tiktok fa-2x hover:scale-110 transition"></i>
+                </a>
             </div>
+
+            <!-- Right Phone Contact -->
+            <div class="flex-1 flex justify-end px-24">
+                <div class="flex items-center gap-3 text-brand-blue">
+
+                    <div>
+                        <h4 class="text-sm font-semibold">Appelez-nous</h4>
+                        <p class="text-sm">+216 96 838 532</p>
+                    </div>
+                    <i class="fas fa-headset fa-2x text-yellow-400"></i>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex justify-between items-center py-3">
+            <span class="font-semibold text-slate-700"></span>
+            <button onclick="toggleMenu()" class="text-brand-blue text-2xl">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden flex flex-col gap-3 pb-4 text-slate-700 font-medium">
+            <i class="fa-brands fa-facebook fa-3x" style="color: rgba(255, 212, 59, 1);"></i>
+            <i class="fa-brands fa-instagram fa-3x" style="color: rgba(255, 212, 59, 1);"></i>
+            <i class="fa-brands fa-tiktok fa-3x" style="color: rgba(255, 212, 59, 1);"></i>
+
+        </div>
+
+        </div>
         </div>
 
         <!-- Toggle Script -->
@@ -220,7 +247,7 @@
                 À propos de nous
             </h2>
 
-            <p class="text-gray-600 justify-center text-lg leading-relaxed">
+            <p class="text-gray-600 text-2xl justify-center text-center leading-relaxed">
                 <span class="font-semibold  text-brand-blue">AL ZAAD (الزاد)</span>
                 est votre partenaire de confiance pour l'approvisionnement alimentaire en gros,
                 au service des commerçants et des revendeurs en Tunisie.
@@ -230,12 +257,12 @@
 
         </div>
     </section>
-    <!-- Partners Section -->
+    <!-- Brands Section -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
 
             <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-12">
-                Nos Partenaires
+                Nos Marques
             </h2>
 
             <div class="swiper partnersSwiper  w-full">
@@ -255,16 +282,16 @@
                     </div>
 
                     <div class="swiper-slide flex justify-center">
-                        <img src="./images/saida.png" class="h-20 object-contain  transition duration-300">
+                        <img src="./images/donia.png" class="h-20 object-contain  transition duration-300">
                     </div>
                     <div class="swiper-slide flex justify-center">
-                        <img src="./images/saida.png" class="h-20 object-contain  transition duration-300">
+                        <img src="./images/still.png" class="h-20 object-contain  transition duration-300">
                     </div>
                     <div class="swiper-slide flex justify-center">
-                        <img src="./images/saida.png" class="h-20 object-contain  transition duration-300">
+                        <img src="./images/moulin.png" class="h-20 object-contain  transition duration-300">
                     </div>
                     <div class="swiper-slide flex justify-center">
-                        <img src="./images/saida.png" class="h-20 object-contain  transition duration-300">
+                        <img src="./images/maestro.png" class="h-20 object-contain  transition duration-300">
                     </div>
 
                 </div>
@@ -272,42 +299,7 @@
 
         </div>
     </section>
-    <!-- Brands Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 text-center">
 
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-12">
-                Nos Marques
-            </h2>
-
-            <div class="swiper brandsSwiper">
-                <div class="swiper-wrapper items-center">
-
-                    <div class="swiper-slide flex justify-center">
-                        <img src="./images/brand1.png"
-                            class="h-20 object-contain grayscale hover:grayscale-0 transition duration-300">
-                    </div>
-
-                    <div class="swiper-slide flex justify-center">
-                        <img src="./images/brand2.png"
-                            class="h-20 object-contain grayscale hover:grayscale-0 transition duration-300">
-                    </div>
-
-                    <div class="swiper-slide flex justify-center">
-                        <img src="./images/brand3.png"
-                            class="h-20 object-contain grayscale hover:grayscale-0 transition duration-300">
-                    </div>
-
-                    <div class="swiper-slide flex justify-center">
-                        <img src="./images/brand4.png"
-                            class="h-20 object-contain grayscale hover:grayscale-0 transition duration-300">
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
 
     <!-- What We Sell -->
     <section class="py-16 bg-white">
@@ -430,12 +422,38 @@
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-sm">
                     <div
-                        class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
-                        <i class="ph-fill ph-money"></i>
+                        class="w-16 h-16 bg-red-300 text-black-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="ph-fill ph-truck"></i>
                     </div>
-                    <h3 data-i18n="featPriceTitle" class="text-xl font-bold mb-3">Prix Transparents</h3>
-                    <p data-i18n="featPriceDesc" class="text-gray-600">Meilleurs tarifs du marché pour maximiser votre
-                        marge.</p>
+                    <h3 data-i18n="featDileveryTitle" class="text-xl font-bold mb-3">Livraison</h3>
+                    <p data-i18n="featDileveryDesc" class="text-gray-600">Livraison rapide et gratuite pour tous les
+                        clients.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-16 h-16 bg-gray-400 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="ph-fill ph-headset"></i>
+                    </div>
+                    <h3 data-i18n="featServiceTitle" class="text-xl font-bold mb-3">Service Client</h3>
+                    <p data-i18n="featServiceDesc" class="text-gray-600">Un service client réactif et disponible pour
+                        répondre à toutes vos questions.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-16 h-16 bg-blue-300 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="ph-fill ph-shield-check"></i>
+                    </div>
+                    <h3 data-i18n="featGarantieTitle" class="text-xl font-bold mb-3">Garantie de qualité</h3>
+                    <p data-i18n="featGarantieDesc" class="text-gray-600">Tous nos produits sont soumis à des contrôles
+                        rigoureux pour garantir leur conformité aux normes les plus élevées.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-16 h-16 bg-red-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="ph-fill ph-gift"></i>
+                    </div>
+                    <h3 data-i18n="featGiftTitle" class="text-xl font-bold mb-3">Cadeaux</h3>
+                    <p data-i18n="featGiftDesc" class="text-gray-600">Réductions et cadeaux tout au long de l’année.</p>
                 </div>
             </div>
         </div>
@@ -496,7 +514,7 @@
         </div>
     </section>
 
-    <section class="py-16 py-12 bg-slate-900  text-white">
+    <section class="py-16 py-12 bg-brand-blue text-white">
         <div class="max-w-7xl mx-auto px-4">
 
             <h2 class="text-3xl font-bold text-center mb-8">
@@ -534,10 +552,12 @@
 
             <div class="grid md:grid-cols-3 gap-8 text-gray-300 text-sm border-t border-slate-700 pt-8">
                 <div>
-                    <h4 data-i18n="contactTitle" class="text-white font-bold mb-2">Contact</h4>
-                    <p>email: alzaadgros1@gmail.com</p>
-                    <p>+216 96 838 532</p>
-                    <p>+216 96 599 053</p>
+                    <h4 data-i18n="contactTitle" class="text-white font-bold mb-2 text-2xl">Contact</h4>
+                    <p class="fas fa-envelope "> alzaadgros1@gmail.com</p>
+                    </br>
+                    <p class="fas fa-phone ">+216 96 838 532</p>
+                    </br>
+                    <p class="fas fa-phone ">+216 96 599 053</p>
                 </div>
                 <div>
                     <h4 data-i18n="locationTitle" class="text-white font-bold mb-2">Zone de Service</h4>
@@ -570,12 +590,20 @@
                 catCakes: "Gâteaux",
                 catFactory: "Produits Industriels",
                 whyTitle: "Pourquoi nous choisir ?",
-                featBulkTitle: "Gros ",
-                featBulkDesc: "Nous servons les magasins et acheteurs en volume.",
-                featStockTitle: "Stock Stable",
-                featStockDesc: "Produits disponibles toute l'année.",
-                featPriceTitle: "Prix Clairs",
-                featPriceDesc: "Tarifs compétitifs pour votre marge.",
+                featBulkTitle: "Vente en gros pour tous les ateliers et magasins de confection",
+                featBulkDesc: "Nous assurons la disponibilité des quantités demandées avec un stock stable et permanent.",
+                featStockTitle: "Produits variés tout au long de l’année",
+                featStockDesc: "Une large gamme diversifiée, disponible selon vos besoins.",
+                featGiftTitle: "Cadeaux",
+                featGiftDesc: "Des cadeaux offerts pour les clients fidèles.",
+                featDileveryTitle: "Livraison",
+                featDileveryDesc: "Livraison rapide et gratuite pour tous les clients.",
+                featServiceTitle: "Service Client",
+                featServiceDesc: "Un service client réactif et disponible pour répondre à toutes vos questions.",
+                featGarantieTitle: "Garantie de qualité",
+                featGarantieDesc: "Tous nos produits sont soumis à des contrôles rigoureux pour garantir leur conformité aux normes les plus élevées.",
+                featPriceTitle: "Paiement",
+                featPriceDesc: "Facilités de paiement avec des transactions sécurisées.",
                 howTitle: "Comment Commander",
                 step1Title: "Contactez via WhatsApp",
                 step1Desc: "Envoyez votre liste de produits.",
