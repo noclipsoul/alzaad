@@ -134,7 +134,7 @@
             <!-- Language Switcher -->
             <div class="relative group">
                 <button id="langBtn"
-                    class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded transition border border-slate-600">
+                    class="flex items-center bg-slate-800  px-3 py-1.5 rounded transition border border-slate-600">
                     <i class="ph ph-globe text-brand-gold"></i>
                     <span id="currentLangLabel">Français</span>
                     <i class="ph ph-caret-down"></i>
@@ -243,12 +243,12 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4 max-w-4xl text-center">
 
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-6">
+            <h2 data-i18n="about_title" class="text-3xl md:text-4xl font-bold text-brand-blue mb-6">
                 À propos de nous
             </h2>
 
             <p class="text-gray-600 text-2xl justify-center text-center leading-relaxed">
-                <span class="font-semibold  text-brand-blue">AL ZAAD (الزاد)</span>
+                <span data-i18n="about_descrip" class="font-semibold  text-brand-blue">AL ZAAD (الزاد)</span>
                 est votre partenaire de confiance pour l'approvisionnement alimentaire en gros,
                 au service des commerçants et des revendeurs en Tunisie.
                 Profitez de produits de qualité et de tarifs compétitifs
@@ -261,7 +261,7 @@
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 text-center">
 
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-12">
+            <h2 data-i18n="our_brands" class="text-3xl md:text-4xl font-bold text-brand-blue mb-12">
                 Nos Marques
             </h2>
 
@@ -353,9 +353,10 @@
                 <!-- Stat 1 -->
                 <div>
                     <h3 class="text-4xl md:text-5xl font-bold text-brand-gold">
+                        <div class="fa-solid fa-smile "></div>
                         <span class="counter" data-target="1500">100</span>+
                     </h3>
-                    <p class="mt-2 text-sm md:text-base uppercase tracking-wide">
+                    <p data-i18n="clients_satisfied" class="mt-2 text-sm md:text-base uppercase tracking-wide">
                         Clients Satisfaits
                     </p>
                 </div>
@@ -363,9 +364,10 @@
                 <!-- Stat 2 -->
                 <div>
                     <h3 class="text-4xl md:text-5xl font-bold text-brand-gold">
+                        <div class="fa-solid fa-basket-shopping "></div>
                         <span class="counter" data-target="1000">3500</span>+
                     </h3>
-                    <p class="mt-2 text-sm md:text-base uppercase tracking-wide">
+                    <p data-i18n="products_available" class="mt-2 text-sm md:text-base uppercase tracking-wide">
                         Produits Disponibles
                     </p>
                 </div>
@@ -375,9 +377,10 @@
                 <!-- Stat 3 -->
                 <div>
                     <h3 class="text-4xl md:text-5xl font-bold text-brand-gold">
+                        <div class="fa-solid fa-truck-fast "></div>
                         <span class="counter" data-target="24">300</span>+
                     </h3>
-                    <p class="mt-2 text-sm md:text-base uppercase tracking-wide">
+                    <p data-i18n="support_delivery" class="mt-2 text-sm md:text-base uppercase tracking-wide">
                         Support & Livraison
                     </p>
                 </div>
@@ -517,7 +520,7 @@
     <section class="py-16 py-12 bg-brand-blue text-white">
         <div class="max-w-7xl mx-auto px-4">
 
-            <h2 class="text-3xl font-bold text-center mb-8">
+            <h2 data-i18n="location" class="text-3xl font-bold text-center mb-8">
                 Our Location
             </h2>
 
@@ -555,26 +558,45 @@
                     <div class="flex items-center gap-3">
                         <img src="./images/profile page logo.png" alt="Alzaad Logo"
                             class="h-12 w-auto object-contain bg-white rounded-md p-0.5">
-                        <span data-i18n="brandName" class="font-bold text-lg hidden sm:block">Wholesale Food TN</span>
+                        <span data-i18n="brandName" class="font-bold text-2xl sm:block">Wholesale Food TN</span>
                     </div>
-                    <div class="text-white text-center font-bold mb-2 text-sm">
+                    <div class="w-32 h-1 bg-yellow-500 mb-2"></div>
+                    <div data-i18n="footer_description" class="text-white text-center font-bold mb-2 text-xl">
                         VENTE EN GROS DE PRODUITS ALIMENTAIRES
                     </div>
                 </div>
 
-                <div>
-                    <h4 data-i18n="ServiceTimeTitle" class="text-white font-bold mb-2">Horaire de service </h4>
-                    <p data-i18n="ServiceTimeDesc" class="text-white text-2xl">lundi -> vendredi : 8h -> 18h</p>
+                <div class="items-start flex flex-col ">
+                    <h4 data-i18n="ServiceTimeTitle" class="text-white font-bold text-2xl mb-2">Horaire de service </h4>
+                    <div class="w-32 h-1 bg-yellow-500 mb-2"></div>
+                    <p data-i18n="ServiceTimeDesc1" class="text-white text-xl mb-2">lundi : 8h -> 18h</p>
+                    <p data-i18n="ServiceTimeDesc2" class="text-white text-xl mb-2">Mardi : 8h -> 18h</p>
+                    <p data-i18n="ServiceTimeDesc3" class="text-white text-xl mb-2">Mercredi : 8h -> 18h</p>
+                    <p data-i18n="ServiceTimeDesc4" class="text-white text-xl mb-2">Jeudi : 8h -> 18h</p>
+                    <p data-i18n="ServiceTimeDesc5" class="text-white text-xl mb-2">Vendredi : 8h -> 18h</p>
+                    <p data-i18n="ServiceTimeDesc6" class="text-white text-xl mb-2">Samedi : 8h -> 18h</p>
                 </div>
-                <div class="p-2">
-                    <h4 data-i18n="contactTitle" class="text-white  items-start mb-2 text-2xl">Contact</h4>
+                <div class="items-start flex flex-col">
+                    <h4 data-i18n="contactTitle" class="text-white  items-start text-2xl mb-2">Contact</h4>
+                    <div class="w-32 h-1 bg-yellow-500 mb-2"></div>
                     <div class="container mx-auto flex flex-col  flex-1 items-start justify-center">
-                        <div class="fas fa-envelope p-2 gap-2"> alzaadgros1@gmail.com</div>
+                        <div class="flex items-start gap-2 mb-2">
+                            <div class="fas fa-envelope text-3xl"></div>
+                            <p class="text-white text-xl">alzaadgros1@gmail.com</p>
+                        </div>
 
-                        <div class="fas fa-phone p-2 gap-2">+216 96 838 532</div>
+                        <div class="flex items-start gap-2 mb-2">
+                            <div class="fas fa-phone text-3xl"></div>
+                            <p class="text-white text-xl">+216 96 838 532</p>
+                        </div>
 
-                        <div class="fas fa-phone p-2 gap-2">+216 96 599 053</div>
-                        <div data-i18n="locationDesc" class="fas fa-location-dot p-2 gap-2"> Grand Tunis et environs
+                        <div class="flex items-start gap-2 mb-2">
+                            <div class="fas fa-phone text-3xl"></div>
+                            <p class="text-white text-xl">+216 96 599 053</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="fas fa-location-dot text-3xl"></div>
+                            <div data-i18n="locationDesc" class="text-white text-xl mb-2"></div>
                         </div>
                         <!-- Center Social Media -->
                         <div class="flex items-center gap-8 text-yellow-600 mt-4">
@@ -601,12 +623,20 @@
         // Translations
         const translations = {
             fr: {
-                brandName: "Grossiste AlZaad",
+                brandName: "Grossiste ALZAAD",
+
                 heroTitle: "ALZAAD VENTE EN GROS PRODUITS ALIMENTAIRES",
                 heroSub: "Vente en cartons et colis uniquement. Soda, Biscuits, Jus et plus.",
                 ctaMain: "Commander via WhatsApp",
-                productsTitle: "Ce que nous vendons",
-                productsSub: "Produits d'usine en cartons / colis uniquement",
+
+                about_title: "À propos de nous",
+                about_descrip: "AL ZAAD (الزاد)",
+
+                our_brands: "Nos Marques",
+
+                productsTitle: "Nos Produits",
+                productsSub: "Produits d'usine en gros volume",
+
                 catSoda: "Boissons Gazeuses",
                 catBiscuit: "Biscuits",
                 catChoco: "Chocolat",
@@ -614,115 +644,215 @@
                 catSweets: "Confiseries",
                 catCakes: "Gâteaux",
                 catFactory: "Produits Industriels",
-                whyTitle: "Pourquoi nous choisir ?",
-                featBulkTitle: "Vente en gros pour tous les ateliers et magasins de confection",
-                featBulkDesc: "Nous assurons la disponibilité des quantités demandées avec un stock stable et permanent.",
-                featStockTitle: "Produits variés tout au long de l’année",
-                featStockDesc: "Une large gamme diversifiée, disponible selon vos besoins.",
-                featGiftTitle: "Cadeaux",
-                featGiftDesc: "Des cadeaux offerts pour les clients fidèles.",
-                featDileveryTitle: "Livraison",
-                featDileveryDesc: "Livraison rapide et gratuite pour tous les clients.",
-                featServiceTitle: "Service Client",
-                featServiceDesc: "Un service client réactif et disponible pour répondre à toutes vos questions.",
-                featGarantieTitle: "Garantie de qualité",
-                featGarantieDesc: "Tous nos produits sont soumis à des contrôles rigoureux pour garantir leur conformité aux normes les plus élevées.",
-                featPriceTitle: "Paiement",
-                featPriceDesc: "Facilités de paiement avec des transactions sécurisées.",
-                howTitle: "Comment Commander",
-                step1Title: "Contactez via WhatsApp",
-                step1Desc: "Envoyez votre liste de produits.",
-                step2Title: "Confirmation",
-                step2Desc: "Nous validons quantité et disponibilité.",
-                step3Title: "Livraison ou Retrait",
-                step3Desc: "Livraison ou Retrait locale gratuitement.",
-                deliveryTitle: "Livraison Locale Rapide",
-                deliveryDesc: "Nous livrons aux commerces de proximité avec nos propres véhicules. Rapide, fiable et sécurisé.",
-                trustTitle: "Confiance",
-                trustDesc: "\"Partenaire fiable pour l'approvisionnement en gros. Service sérieux.\"",
 
-                footerCta: "Besoin de marchandise ?",
+                clients_satisfied: "Clients Satisfaits",
+                products_available: "Produits Disponibles",
+                support_delivery: "Livraison & Support",
+
+                whyTitle: "Pourquoi Nous Choisir ?",
+
+                featBulkTitle: "Vente en Gros",
+                featBulkDesc: "Nous servons exclusivement les commerçants et acheteurs en grande quantité.",
+
+                featStockTitle: "Stock Stable",
+                featStockDesc: "Disponibilité garantie de nos produits toute l’année.",
+
+                featPriceTitle: "Prix Compétitifs",
+                featPriceDesc: "Tarifs étudiés pour maximiser votre marge.",
+
+                featDileveryTitle: "Livraison Rapide",
+                featDileveryDesc: "Livraison locale rapide et fiable.",
+
+                featServiceTitle: "Service Client",
+                featServiceDesc: "Une équipe disponible pour répondre à vos besoins.",
+
+                featGarantieTitle: "Qualité Garantie",
+                featGarantieDesc: "Produits conformes aux normes les plus élevées.",
+
+                featGiftTitle: "Offres & Cadeaux",
+                featGiftDesc: "Promotions régulières pour nos clients fidèles.",
+
+                howTitle: "Comment Commander",
+
+                step1Title: "Contactez-nous",
+                step1Desc: "Envoyez votre liste de commande via WhatsApp.",
+
+                step2Title: "Confirmation",
+                step2Desc: "Validation des quantités et du prix total.",
+
+                step3Title: "Livraison ou Retrait",
+                step3Desc: "Livraison locale ou retrait sur place.",
+
+                step4Title: "Service Après-Vente",
+                step4Desc: "Assistance continue et conseillers disponibles.",
+
+                footerCta: "Prêt à passer commande ?",
                 contactTitle: "Contact",
-                locationTitle: "Adresse",
-                locationDesc: " 032 STRASBOUG MOUROUJ 3, Ben Arous, Tunisie, 2074",
+                footer_description: "VENTE EN GROS DE PRODUITS ALIMENTAIRES",
+                ServiceTimeTitle: "Horaire de service",
+                ServiceTimeDesc1: "Lundi : 8h → 18h",
+                ServiceTimeDesc2: "Mardi : 8h → 18h",
+                ServiceTimeDesc3: "Mercredi : 8h → 18h",
+                ServiceTimeDesc4: "Jeudi : 8h → 18h",
+                ServiceTimeDesc5: "Vendredi : 8h → 18h",
+                ServiceTimeDesc6: "Samedi : 8h → 18h",
+
+                locationDesc: "032 STRASBOURG MOUROUJ 3, Ben Arous, Tunisie, 2074"
             },
+
             en: {
-                brandName: "AlZaad Wholesale",
-                heroTitle: "Wholesale Food Warehouse – Tunisia",
-                heroSub: "Sales in cartons and packages only. Soda, Biscuits, Juice & more.",
+                brandName: "ALZAAD Wholesale",
+
+                heroTitle: "ALZAAD WHOLESALE FOOD PRODUCTS",
+                heroSub: "Carton and bulk sales only. Soda, Biscuits, Juice and more.",
                 ctaMain: "Order via WhatsApp",
-                productsTitle: "What We Sell",
-                productsSub: "Factory products in cartons / bulk only",
+
+                about_title: "About Us",
+                about_descrip: "AL ZAAD (الزاد)",
+
+                our_brands: "Our Brands",
+
+                productsTitle: "Our Products",
+                productsSub: "Factory products in bulk quantities",
+
                 catSoda: "Soft Drinks",
                 catBiscuit: "Biscuits",
                 catChoco: "Chocolate",
                 catJuice: "Juice",
-                catSweets: "Sweets & Gum",
+                catSweets: "Sweets & Candy",
                 catCakes: "Cakes",
                 catFactory: "Industrial Grocery",
+
+                clients_satisfied: "Satisfied Clients",
+                products_available: "Available Products",
+                support_delivery: "Delivery & Support",
+
                 whyTitle: "Why Choose Us?",
+
                 featBulkTitle: "Wholesale Only",
-                featBulkDesc: "We only serve shops and bulk buyers.",
+                featBulkDesc: "We serve retailers and bulk buyers only.",
+
                 featStockTitle: "Stable Stock",
-                featStockDesc: "Year-round availability.",
-                featPriceTitle: "Clear Prices",
-                featPriceDesc: "Competitive rates for your margin.",
-                howTitle: "How It Works",
-                step1Title: "Contact via WhatsApp",
-                step1Desc: "Send your product list.",
+                featStockDesc: "Year-round product availability.",
+
+                featPriceTitle: "Competitive Prices",
+                featPriceDesc: "Optimized pricing to maximize your profit.",
+
+                featDileveryTitle: "Fast Delivery",
+                featDileveryDesc: "Reliable and quick local delivery.",
+
+                featServiceTitle: "Customer Service",
+                featServiceDesc: "Responsive support for all your needs.",
+
+                featGarantieTitle: "Quality Guarantee",
+                featGarantieDesc: "Products meeting high quality standards.",
+
+                featGiftTitle: "Offers & Bonuses",
+                featGiftDesc: "Regular promotions for loyal customers.",
+
+                howTitle: "How to Order",
+
+                step1Title: "Contact Us",
+                step1Desc: "Send your order list via WhatsApp.",
+
                 step2Title: "Confirmation",
-                step2Desc: "We confirm quantity and availability.",
+                step2Desc: "We confirm quantities and total price.",
+
                 step3Title: "Delivery or Pickup",
-                step3Desc: "Local delivery by van.",
-                deliveryTitle: "Fast Local Delivery",
-                deliveryDesc: "We deliver to local shops with our own vehicles. Fast, reliable, and secure.",
-                trustTitle: "Trust",
-                trustDesc: "\"Reliable partner for wholesale supply. Serious service.\"",
-                footerCta: "Need Stock?",
+                step3Desc: "Local delivery or warehouse pickup.",
+
+                step4Title: "After-Sales Service",
+                step4Desc: "Continuous assistance and support.",
+
+                footerCta: "Ready to Order?",
                 contactTitle: "Contact",
-                locationTitle: "Adress",
-                locationDesc: "032 STRASBOUG MOUROUJ 3, Ben Arous, Tunisia, 2074",
+
+                ServiceTimeTitle: "Working Hours",
+                ServiceTimeDesc1: "Monday: 8am → 6pm",
+                ServiceTimeDesc2: "Tuesday: 8am → 6pm",
+                ServiceTimeDesc3: "Wednesday: 8am → 6pm",
+                ServiceTimeDesc4: "Thursday: 8am → 6pm",
+                ServiceTimeDesc5: "Friday: 8am → 6pm",
+                ServiceTimeDesc6: "Saturday: 8am → 6pm",
+
+                locationDesc: "032 STRASBOURG MOUROUJ 3, Ben Arous, Tunisia, 2074"
             },
+
             ar: {
-                brandName: "مخزن الزاد للجملة",
-                heroBadge: "بيع بالجملة فقط",
-                heroTitle: "مستودع بيع المواد الغذائية بالجملة",
-                heroSub: "البيع بالكرتونة والطرود فقط. مشروبات، بسكويت، عصائر والمزيد.",
+                brandName: "الزاد ",
+
+                heroTitle: "الزاد لبيع المواد الغذائية بالجملة",
+                heroSub: "بيع بالكرتونة والطرود فقط. مشروبات، بسكويت، عصائر وأكثر.",
                 ctaMain: "اطلب عبر واتساب",
+
+                about_title: "من نحن",
+                about_descrip: "الزاد",
+
+                our_brands: "علاماتنا التجارية",
+
                 productsTitle: "منتجاتنا",
-                productsSub: "منتجات مصانع بالكرتونة / طرود فقط",
+                productsSub: "منتجات مصانع بكميات كبيرة",
+
                 catSoda: "مشروبات غازية",
                 catBiscuit: "بسكويت",
-                catChoco: "شكولاتة",
+                catChoco: "شوكولاتة",
                 catJuice: "عصائر",
                 catSweets: "حلويات وسكاكر",
                 catCakes: "كيك",
                 catFactory: "مواد غذائية مصنعة",
-                whyTitle: "لماذا نحن؟",
-                featBulkTitle: "بيع بالجملة فقط",
-                featBulkDesc: "نخدم أصحاب المحلات والمشترين بكميات كبيرة.",
-                featStockTitle: "ستوك مستقر",
-                featStockDesc: "توفير المنتجات طوال العام.",
-                featPriceTitle: "أسعار واضحة",
-                featPriceDesc: "أفضل الأسعار لضمان ربحك.",
-                howTitle: "طريقة الطلب",
-                step1Title: "تواصل عبر واتساب",
-                step1Desc: "أرسل قائمة طلباتك.",
-                step2Title: "تأكيد الطلب",
-                step2Desc: "نؤكد الكمية والتوفر.",
-                step3Title: "توصيل أو استلام",
-                step3Desc: "توصيل للمحلات عبر شاحناتنا.",
-                deliveryTitle: "توصيل محلي سريع",
-                deliveryDesc: "نقوم بالتوصيل للمحلات التجارية المجاورة بمركباتنا الخاصة. خدمة سريعة وموثوقة.",
-                trustTitle: "ثقة",
-                trustDesc: "\"شريك موثوق للتزود بالسلع بالجملة. خدمة جادة ومحترفة.\"",
 
-                footerCta: "محتاج سلعة؟",
+                clients_satisfied: "عملاء راضون",
+                products_available: "منتجات متوفرة",
+                support_delivery: "توصيل ودعم",
+
+                whyTitle: "لماذا نحن؟",
+
+                featBulkTitle: "بيع بالجملة فقط",
+                featBulkDesc: "نخدم أصحاب المحلات والتجار فقط بكميات كبيرة.",
+
+                featStockTitle: "مخزون مستقر",
+                featStockDesc: "توفر المنتجات طوال السنة.",
+
+                featPriceTitle: "أسعار تنافسية",
+                featPriceDesc: "أسعار مدروسة لزيادة هامش ربحك.",
+
+                featDileveryTitle: "توصيل سريع",
+                featDileveryDesc: "توصيل محلي سريع وموثوق.",
+
+                featServiceTitle: "خدمة العملاء",
+                featServiceDesc: "فريق متاح للإجابة على جميع استفساراتكم.",
+
+                featGarantieTitle: "ضمان الجودة",
+                featGarantieDesc: "منتجات مطابقة لأعلى معايير الجودة.",
+
+                featGiftTitle: "عروض وهدايا",
+                featGiftDesc: "عروض خاصة للعملاء الدائمين.",
+
+                howTitle: "طريقة الطلب",
+                location: "الموقع",
+                step1Title: "تواصل معنا",
+                step1Desc: "أرسل قائمة طلبك عبر واتساب.",
+                step2Title: "تأكيد الطلب",
+                step2Desc: "نؤكد الكمية والسعر الإجمالي.",
+                step3Title: "توصيل أو استلام",
+                step3Desc: "توصيل محلي أو استلام من المستودع.",
+                step4Title: "خدمة ما بعد البيع",
+                step4Desc: "متابعة ودعم مستمر.",
+                footerCta: "جاهز للطلب؟",
                 contactTitle: "اتصل بنا",
-                locationTitle: "العنوان",
-                locationDesc: "032 شارع ستراسبورغ مروج 3، بن عروس، تونس، 2074",
+                footer_description: "الزاد لبيع المواد الغذائية بالجملة",
+                ServiceTimeTitle: "أوقات العمل",
+                ServiceTimeDesc1: "الاثنين: 8 → 18",
+                ServiceTimeDesc2: "الثلاثاء: 8 → 18",
+                ServiceTimeDesc3: "الأربعاء: 8 → 18",
+                ServiceTimeDesc4: "الخميس: 8 → 18",
+                ServiceTimeDesc5: "الجمعة: 8 → 18",
+                ServiceTimeDesc6: "السبت: 8 → 18",
+
+                locationDesc: "032 شارع ستراسبورغ مروج 3، بن عروس، تونس، 2074"
             }
         };
+
 
         function setLanguage(lang) {
             // Validate lang
