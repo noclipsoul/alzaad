@@ -82,13 +82,21 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        let partnersSwiper;
+        let brandsSwiper;
 
-            // Partners Swiper
-            new Swiper(".partnersSwiper", {
+        function initSwipers() {
+
+            // Destroy old instances before recreating
+            if (partnersSwiper) partnersSwiper.destroy(true, true);
+            if (brandsSwiper) brandsSwiper.destroy(true, true);
+
+            partnersSwiper = new Swiper(".partnersSwiper", {
                 loop: true,
                 slidesPerView: 4,
+                slidesPerGroup: 1, // slide by 1
                 spaceBetween: 30,
+                watchOverflow: true,
                 autoplay: {
                     delay: 2000,
                     disableOnInteraction: false,
@@ -101,11 +109,12 @@
                 },
             });
 
-            // Brands Swiper
-            new Swiper(".brandsSwiper", {
+            brandsSwiper = new Swiper(".brandsSwiper", {
                 loop: true,
                 slidesPerView: 4,
+                slidesPerGroup: 1, // slide by 1
                 spaceBetween: 30,
+                watchOverflow: true,
                 autoplay: {
                     delay: 2500,
                     disableOnInteraction: false,
@@ -117,9 +126,14 @@
                     1024: { slidesPerView: 4 },
                 },
             });
+        }
 
+        document.addEventListener("DOMContentLoaded", function () {
+            initSwipers(); // initialize once
         });
     </script>
+
+
 
     <!-- Navbar -->
     <nav class="bg-brand-blue text-white sticky top-0 z-50 shadow-lg">
@@ -249,10 +263,7 @@
 
             <p class="text-gray-600 text-2xl justify-center text-center leading-relaxed">
                 <span data-i18n="about_descrip" class="font-semibold  text-brand-blue">AL ZAAD (الزاد)</span>
-                est votre partenaire de confiance pour l'approvisionnement alimentaire en gros,
-                au service des commerçants et des revendeurs en Tunisie.
-                Profitez de produits de qualité et de tarifs compétitifs
-                pour assurer la prospérité de votre entreprise sur le marché.
+
             </p>
 
         </div>
@@ -521,7 +532,7 @@
         <div class="max-w-7xl mx-auto px-4">
 
             <h2 data-i18n="location" class="text-3xl font-bold text-center mb-8">
-                Our Location
+                Notre localisation
             </h2>
 
             <div class="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg">
@@ -626,12 +637,12 @@
                 brandName: "Grossiste ALZAAD",
 
                 heroTitle: "ALZAAD VENTE EN GROS PRODUITS ALIMENTAIRES",
-                heroSub: "Vente en cartons et colis uniquement. Soda, Biscuits, Jus et plus.",
+                heroSub: "Vente en cartons et colis uniquement. Soda, biscuits, jus et plus encore.",
+
                 ctaMain: "Commander via WhatsApp",
 
                 about_title: "À propos de nous",
-                about_descrip: "AL ZAAD (الزاد)",
-
+                about_descrip: "AL ZAAD (الزاد) est votre partenaire de confiance pour l'approvisionnement alimentaire en gros,au service des commerçants et des revendeurs en Tunisie. Profitez de produits de qualité et de tarifs compétitifs pour assurer la prospérité de votre entreprise sur le marché.",
                 our_brands: "Nos Marques",
 
                 productsTitle: "Nos Produits",
@@ -696,6 +707,7 @@
                 ServiceTimeDesc4: "Jeudi : 8h → 18h",
                 ServiceTimeDesc5: "Vendredi : 8h → 18h",
                 ServiceTimeDesc6: "Samedi : 8h → 18h",
+                location: "Notre Localisation",
 
                 locationDesc: "032 STRASBOURG MOUROUJ 3, Ben Arous, Tunisie, 2074"
             },
@@ -708,7 +720,7 @@
                 ctaMain: "Order via WhatsApp",
 
                 about_title: "About Us",
-                about_descrip: "AL ZAAD (الزاد)",
+                about_descrip: "AL ZAAD (الزاد) is your trusted partner for wholesale food supplies, serving traders and retailers in Tunisia. Benefit from quality products and competitive prices to ensure the prosperity of your business in the market.",
 
                 our_brands: "Our Brands",
 
@@ -766,6 +778,7 @@
 
                 footerCta: "Ready to Order?",
                 contactTitle: "Contact",
+                footer_description: "WHOLESALE FOOD PRODUCTS DISTRIBUTOR",
 
                 ServiceTimeTitle: "Working Hours",
                 ServiceTimeDesc1: "Monday: 8am → 6pm",
@@ -774,19 +787,20 @@
                 ServiceTimeDesc4: "Thursday: 8am → 6pm",
                 ServiceTimeDesc5: "Friday: 8am → 6pm",
                 ServiceTimeDesc6: "Saturday: 8am → 6pm",
+                location: "Our Location",
 
                 locationDesc: "032 STRASBOURG MOUROUJ 3, Ben Arous, Tunisia, 2074"
             },
 
             ar: {
-                brandName: "الزاد ",
+                brandName: "الزاد للجملة",
 
                 heroTitle: "الزاد لبيع المواد الغذائية بالجملة",
                 heroSub: "بيع بالكرتونة والطرود فقط. مشروبات، بسكويت، عصائر وأكثر.",
                 ctaMain: "اطلب عبر واتساب",
 
                 about_title: "من نحن",
-                about_descrip: "الزاد",
+                about_descrip: "شركة الزاد شريكك الموثوق لتوريد المواد الغذائية بالجملة، وتخدم التجار وتجار التجزئة في تونس. استفد من منتجات عالية الجودة وأسعار تنافسية لضمان نجاح أعمالك في السوق.",
 
                 our_brands: "علاماتنا التجارية",
 
@@ -857,6 +871,7 @@
         function setLanguage(lang) {
             // Validate lang
             if (!translations[lang]) lang = 'fr';
+            localStorage.setItem("selectedLang", lang);
 
             // Update DOM text
             document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -881,7 +896,7 @@
                 body.classList.add('font-sans'); // Switch to Inter font
                 body.classList.remove('font-arabic');
             }
-
+            initSwipers();
             // Update Button Label
             const langLabels = {
                 fr: 'Français',
