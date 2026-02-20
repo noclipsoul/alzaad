@@ -190,7 +190,7 @@
 
                     <div>
                         <h4 class="text-sm font-semibold">Appelez-nous</h4>
-                        <p class="text-sm">+216 96 838 532</p>
+                        <p  data-i18n="numbernav" class="text-sm">+216 96 838 532</p>
                     </div>
                     <i class="fas fa-headset fa-2x text-yellow-400"></i>
                 </div>
@@ -317,7 +317,6 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 data-i18n="productsTitle" class="text-3xl font-bold text-brand-blue mb-2">Nos Produits</h2>
-                <p data-i18n="productsSub" class="text-gray-500">Produits d'usine en gros volume</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
@@ -515,7 +514,10 @@
                     <h3 data-i18n="step3Title" class="text-xl font-bold mb-2">Livraison</h3>
                     <p data-i18n="step3Desc" class="text-gray-500">Livraison ou Retrait locale gratuitement .</p>
                 </div>
-
+<!-- Arrow -->
+                <div class="hidden md:block pt-8 text-gray-300 rtl-flip">
+                    <i class="ph-bold ph-arrow-right text-4xl"></i>
+                </div>
                 <!-- Step 4 -->
                 <div class="w-full md:w-1/3 text-center">
                     <div
@@ -598,12 +600,12 @@
 
                         <div class="flex items-start gap-2 mb-2">
                             <div class="fas fa-phone text-3xl"></div>
-                            <p class="text-white text-xl">+216 96 838 532</p>
+                            <p data-i18n="numberfoot1" class="text-white text-xl">+216 96 838 532</p>
                         </div>
 
                         <div class="flex items-start gap-2 mb-2">
                             <div class="fas fa-phone text-3xl"></div>
-                            <p class="text-white text-xl">+216 96 599 053</p>
+                            <p  data-i18n="numberfoot2"  class="text-white text-xl">+216 96 599 053</p>
                         </div>
                         <div class="flex items-start gap-2">
                             <div class="fas fa-location-dot text-3xl"></div>
@@ -646,7 +648,7 @@
                 our_brands: "Nos Marques",
 
                 productsTitle: "Nos Produits",
-                productsSub: "Produits d'usine en gros volume",
+               
 
                 catSoda: "Boissons Gazeuses",
                 catBiscuit: "Biscuits",
@@ -725,8 +727,7 @@
                 our_brands: "Our Brands",
 
                 productsTitle: "Our Products",
-                productsSub: "Factory products in bulk quantities",
-
+                
                 catSoda: "Soft Drinks",
                 catBiscuit: "Biscuits",
                 catChoco: "Chocolate",
@@ -805,8 +806,9 @@
                 our_brands: "علاماتنا التجارية",
 
                 productsTitle: "منتجاتنا",
-                productsSub: "منتجات مصانع بكميات كبيرة",
-
+                numbernav: "532 838 96 216+",
+                numberfoot1: "532 838 96 216+",
+                numberfoot2: "053 599 96 216+",
                 catSoda: "مشروبات غازية",
                 catBiscuit: "بسكويت",
                 catChoco: "شوكولاتة",
@@ -821,37 +823,37 @@
 
                 whyTitle: "لماذا نحن؟",
 
-                featBulkTitle: "بيع بالجملة فقط",
-                featBulkDesc: "نخدم أصحاب المحلات والتجار فقط بكميات كبيرة.",
+                featBulkTitle: " بيع بالجملة لجميع محلات التفصيل",
+                featBulkDesc: "نوفر الكميات المطلوبة مع مخزون قار لضمان استمرارية التزويد.",
 
-                featStockTitle: "مخزون مستقر",
-                featStockDesc: "توفر المنتجات طوال السنة.",
+                featStockTitle: "منتوجات متنوعة طوال السنة",
+                featStockDesc: "تشكيلة واسعة ومتجددة بالكميات التي تناسب حاجتكم.",
 
-                featPriceTitle: "أسعار تنافسية",
-                featPriceDesc: "أسعار مدروسة لزيادة هامش ربحك.",
+                featPriceTitle: "الخلاص",
+                featPriceDesc: "تسهيلات في الدفع مع أمان تام في المعاملات.",
 
-                featDileveryTitle: "توصيل سريع",
-                featDileveryDesc: "توصيل محلي سريع وموثوق.",
+                featDileveryTitle: "التوصيل",
+                featDileveryDesc: "توصيل سريع ومجاني لجميع الحرفاء.",
 
                 featServiceTitle: "خدمة العملاء",
-                featServiceDesc: "فريق متاح للإجابة على جميع استفساراتكم.",
+                featServiceDesc: "استجابة سريعة طوال الأسبوع مع توجيه ونصائح لمساعدتكم.",
 
                 featGarantieTitle: "ضمان الجودة",
                 featGarantieDesc: "منتجات مطابقة لأعلى معايير الجودة.",
 
-                featGiftTitle: "عروض وهدايا",
-                featGiftDesc: "عروض خاصة للعملاء الدائمين.",
+                featGiftTitle: "الهدايا والتخفيضات",
+                featGiftDesc: "عروض خاصة وهدايا على مدار السنة.",
 
                 howTitle: "طريقة الطلب",
                 location: "الموقع",
                 step1Title: "تواصل معنا",
-                step1Desc: "أرسل قائمة طلبك عبر واتساب.",
+                step1Desc: " أرسل قائمة طلبك عبر واتساب أو إتصل بنا عبر الهاتف .",
                 step2Title: "تأكيد الطلب",
                 step2Desc: "نؤكد الكمية والسعر الإجمالي.",
                 step3Title: "توصيل أو استلام",
-                step3Desc: "توصيل محلي أو استلام من المستودع.",
+                step3Desc: "توصيل سريع ومجاني لجميع الحرفاء",
                 step4Title: "خدمة ما بعد البيع",
-                step4Desc: "متابعة ودعم مستمر.",
+                step4Desc: " أستجابة سريعة طوال الأسبوع مع توجيه و نصائح لمساعدتكم",
                 footerCta: "جاهز للطلب؟",
                 contactTitle: "اتصل بنا",
                 footer_description: "الزاد لبيع المواد الغذائية بالجملة",
